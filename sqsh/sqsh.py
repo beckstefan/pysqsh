@@ -48,7 +48,7 @@ class SQSHResponse:
         """
         Split the result into cells, i.e. list of list.
         """
-        return [row.split(COLUMN_SEPARATOR)[:-1] for row in self.rows]
+        return [row.split(COLUMN_SEPARATOR) for row in self.rows]
 
 
 def call(sql, *arg, encoding='iso-8859-1', width=25000, timeout=30, **kwargs):
