@@ -8,5 +8,5 @@ jobs:
     - uses: actions/checkout@v2
     - run: |
         python -m pip install --upgrade pip
-        pip install tox tox-gh-actions
+        pip install tox
     - run: tox -v
