@@ -8,6 +8,10 @@ Installation
 
 PySQSH is a wrapper for ``sqsh`` and thus requires a running version of ``sqsh``.
 
+.. code:: bash
+
+    pip install git+https://github.com/beckstefan/pysqsh.git#pysqsh
+
 Documentation
 -------------
 
