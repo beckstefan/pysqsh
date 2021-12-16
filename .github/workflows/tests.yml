@@ -1,8 +1,12 @@
 on: [push]
 
-steps:
-- uses: actions/checkout@v2
-- run: |
-    python -m pip install --upgrade pip
-    pip install tox tox-gh-actions
-- run: tox
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        python -m pip install --upgrade pip
+        pip install tox tox-gh-actions
+    - run: tox
