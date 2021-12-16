@@ -1,0 +1,8 @@
+# Python related files
+.eggs
+*.pyc
+pysqsh.egg-info/
+.tox
+
+# Editor specific files
+*.swp
