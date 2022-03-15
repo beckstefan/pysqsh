@@ -33,15 +33,13 @@ class SQSHResponse:
     def first_row(self):
         """
         Return the first row, splitted.
-        This is useful if you need only the first row.
         """
         return self.stdout.split(ROW_SEPARATOR, 1)[0].split(COLUMN_SEPARATOR)
 
     @property
     def first_cell(self):
         """
-        Returns the first cell.
-        This is useful, when you expect only one result.
+        Return the first cell.
         """
         return self.first_row[0]
 
@@ -54,7 +52,7 @@ class SQSHResponse:
 
     @property
     def rows(self):
-        """
+        r"""
         Split the result into rows by using '\n|' (the default bcp separator).
         """
         return self.stdout.split(ROW_SEPARATOR)[:-1]
