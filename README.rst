@@ -30,7 +30,7 @@ Depending on your ``.sqshrc`` and your ``Interfaces``, you simply need to pass t
     except Exception as e:
         # Do something with the exception ...
         pass
-    for r in s.row:
+    for r in s.rows:
         # Do something with r
 
 Results
@@ -38,9 +38,11 @@ Results
 
 After successful execution, you get an ``SQSHResponse`` back with the following attributes:
 
-* ``result`` The output of sqsh
-* ``rows`` The result is splitted into rows. In case there's no output, this is the empty list ``[]``
+* ``result`` The output of sqsh as plain text
+* ``rows`` The result is splitted into rows. This is nice, if you have a single column.
 * ``table`` The result as cells, i.e. list of list. In case there's no output, this is the list containing the empty list ``[[]]``
+* ``first_row`` The first row of the result. This is useful if have just one row anyway.
+* ``first_cell`` The first cell of the result. This is useful if you want just a single result.
 
 Exceptions
 ~~~~~~~~~~

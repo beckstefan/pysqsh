@@ -30,6 +30,22 @@ class SQSHResponse:
         self.stdout = c.stdout
 
     @property
+    def first_row(self):
+        """
+        Return the first row, splitted.
+        This is useful if you need only the first row.
+        """
+        return self.stdout.split(ROW_SEPARATOR, 1)[0].split(COLUMN_SEPARATOR)
+
+    @property
+    def first_cell(self):
+        """
+        Returns the first cell.
+        This is useful, when you expect only one result.
+        """
+        return self.first_row[0]
+
+    @property
     def result(self):
         """
         Give the result as it comes from sqsh.
@@ -38,7 +54,7 @@ class SQSHResponse:
 
     @property
     def rows(self):
-        r"""
+        """
         Split the result into rows by using '\n|' (the default bcp separator).
         """
         return self.stdout.split(ROW_SEPARATOR)[:-1]
@@ -62,7 +78,7 @@ def call(sql, *arg, encoding='iso-8859-1', width=25000, timeout=30, **kwargs):
     if not isinstance(sql, str):
         raise Exception("sql must be of type string")
     if not isinstance(encoding, str):
-        raise Exception("endoning must be of type string")
+        raise Exception("encoding must be of type string")
     if not isinstance(width, int):
         raise Exception("width must be of type int")
     if not isinstance(timeout, int) or timeout <= 0:
