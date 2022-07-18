@@ -65,7 +65,7 @@ class SQSHResponse:
         return [row.split(COLUMN_SEPARATOR) for row in self.rows]
 
 
-def call(sql, *arg, encoding='iso-8859-1', width=25000, timeout=30, **kwargs):
+def call(sql, *arg, encoding='iso-8859-1', width=25000, timeout=90, **kwargs):
     """
     Execute the sqsh commands with the given parameters.
 

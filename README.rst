@@ -57,7 +57,7 @@ You can pass to ``sqsh.call``:
 
 * ``encoding`` Encoding to use for input and output of sqsh - default is ``iso-8859-1``
 * ``width`` Width of output of sqsh. Default is 25000 which should be enough for most use cases. Increase if you expect very long lines.
-* ``timeout`` Maximum time to wait for ``sqsh`` to finish. Default is 30 seconds.
+* ``timeout`` Maximum time to wait for ``sqsh`` to finish. Default is 90 seconds.
 
 Then you can pass extra arguments to ``sqsh.call`` which will be directly passed to ``sqsh`` without any further checks!
 By design of ``sqsh``, you can safely pass passwords with ``-P`` as ``sqsh`` will obscure the value for e.g. ``ps``.
