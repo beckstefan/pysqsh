@@ -38,7 +38,7 @@ The module comes with the following function calls:
 
 * ``call``
 * ``raw``
-* ``stripped``
+* ``strip``
 
 They all take the same parameters, but their response objects differ.
 
