@@ -121,7 +121,10 @@ def execute_sql(sql, *args, encoding='iso-8859-1', width=25000, timeout=90, **kw
     for key, value in kwargs.items():
         if not isinstance(kwargs[key], str):
             raise Exception("{key} in kwargs must be of type string".format(key=key))
-    sqsh_args = dict()
+
+    sqsh_args = {
+        'w': width,
+    }
     sqsh_args.update(kwargs)
 
     cmd_with_args = ['sqsh'] + ["-{key}{value}".format(key=key, value=value) for key, value in sqsh_args.items()]
